@@ -41,4 +41,21 @@
       <sf:deploy username="${sf.username}" password="${sf.password}"  serverurl="${sf.serverurl}" deployRoot="src" >
       </sf:deploy>
 	</target>
+<path id="pmd.classpath">
+<fileset dir="lib">
+ <include name="**/*.jar"/>
+ </fileset>
+ </path>
+<taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>
+
+<target name="pmd">
+    
+    <pmd rulesetfiles="Rules/Apex Rules.xml">
+        <formatter type="xml" toFile="pmd_report.xml"/>
+        <fileset dir="src">
+            <include name="**/*.cls"/>
+        </fileset>
+    </pmd>
+</target>  
+	
 </project>
