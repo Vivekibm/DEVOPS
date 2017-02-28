@@ -40,7 +40,7 @@
       <!-- Upload the contents of the "codepkg" directory, running the tests for just 1 class -->
       <sf:deploy username="${sf.username}" password="${sf.password}"  serverurl="${sf.serverurl}" deployRoot="src" >
       </sf:deploy>
-	</target>
+</target>
 <path id="pmd.classpath">
 <fileset dir="lib">
  <include name="**/*.jar"/>
@@ -57,5 +57,4 @@
         </fileset>
     </pmd>
 </target>  
-	
 </project>
